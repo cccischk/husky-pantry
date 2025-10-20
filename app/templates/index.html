@@ -1,6 +1,67 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
 {% block content %}
-  <h2>Welcome to my Flask app!</h2>
-  <p>This is the homepage.</p>
+<h1>Welcome to the HuskyPantry Inventory Tracker!</h1>
+<h2>Location</h2>
+<a href="https://map.mtu.edu/?id=1308#!m/965017?s/" target="_blank">Check out our location on the campus map!</a> 
+<p>The HuskyFAN Pantry is located on the first floor of Fisher Hall. It is behind the glass wall, across the hall from Fisher 135.  The HuskyPantry is free for any Michigan Tech student or member of the community.  It does <strong>not</strong> require a sign up, fee, or payment of any kind. Some of the basic items you'll find at the Pantry are listed below:</p>
+<div id="available-food-grid">
+   
+    <section id="grid-section-one">
+        <h3>Dry Goods</h3>
+        <ul>
+            <li>Pasta</li>
+            <li>Rice</li>
+            <li>Beans</li>
+            <li>Lentils</li>
+        </ul>
+    </section>
+
+    <section id="grid-section-two">
+        <h3>Meal Bases</h3>
+        <ul>
+            <li>Mac and Cheese</li>
+            <li>Soup</li>
+            <li>Cereal</li>
+            <li>Oatmeal</li>
+        </ul>
+    </section>
+
+    <section id="grid-section-three">
+        <h3>Produce</h3>
+        <ul>
+            <li>Fresh Produce from the Wads garden, available during market season</li>
+            <li>Frozen fruits/vegetables</li>
+            <li>Canned fruits/vegetables</li>
+        </ul>
+    </section>
+
+    <section id="grid-section-four">
+        <h3>Protein</h3>
+        <ul>
+            <li>Frozen Ground Beef/Fish</li>
+            <li>Peanut Butter</li>
+            <li>Tofu</li>
+            <li>Canned Chicken, Salmon, and Tuna</li>
+        </ul>
+    </section>
+
+    <section id="grid-section-five">
+        <h3>Cooking Staples</h3>
+        <ul>
+            <li>Flour</li>
+            <li>Oil</li>
+            <li>Salt</li>
+            <li>Sugar</li>
+            <li>Baking Soda</li>
+            <li>Vinegar</li>
+            <li>Cleaning supplies/hygiene products available by donation</li>
+        </ul>
+    </section>
+</div>
+<br>
+    <iframe style="border-width: 0;" src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;ctz=America%2FDetroit&amp;showPrint=0&amp;mode=WEEK&amp;showTitle=0&amp;showCalendars=0&amp;src=aHVza3lmYW5AbXR1LmVkdQ&amp;color=%234285f4"  height="500" frameborder="0" scrolling="no"></iframe>
+    <p>If you want to see the HuskyPantry's available inventory, click the available inventory button below!  *This is a Work in Progress*</p>
+    <button type="button" id="inventory-button">Available Inventory</button>
+
 {% endblock %}
