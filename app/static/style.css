@@ -9,6 +9,91 @@ nav{
     border: 10px solid black;
     width: 100%;
     margin: -10px 20px 0px -10px;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px;
+}
+/*added*/
+#nav-container{
+    margin-left:auto;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+#hamburger-lines {
+  display: block;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: gold;
+}
+#hamburger-lines .line {
+  display: block;
+  height: 5px;
+  width: 100%;
+  border-radius: 10px;
+  background: gold;
+  color:gold
+}
+.nav-container .checkbox {
+  position: absolute;
+  display: block;
+  height: 50px;
+  width: 50px;
+  top:15px;
+  right: 25px;
+  z-index: 5;
+  opacity: 0;
+  cursor: pointer;
+}
+
+
+.nav-container input[type="checkbox"]:checked ~ #hamburger-lines .line1 {
+  transform: rotate(45deg) translate(15px, 15px);
+}
+
+.nav-container input[type="checkbox"]:checked ~ #hamburger-lines .line2 {
+  transform: scaleY(0);
+}
+
+.nav-container input[type="checkbox"]:checked ~ #hamburger-lines .line3 {
+  transform: rotate(-45deg) translate(15px, -15px);
+}
+
+.nav-container input[type="checkbox"]:checked ~ .logo{
+  display: none;
+}
+
+.vertical-nav{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    background-color: black;
+    position: fixed;
+    top: 91px;
+    right: -2000px;
+    padding: 20px;
+    border: 2px solid gold;
+    gap: 15px;
+}
+.nav-container input[type="checkbox"]:checked ~ .vertical-nav{
+    right: 0px;
+}
+.vertical-nav a{
+    color: gold;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+.vertical-nav a:active{
+    color: white;
+    text-decoration: none;
+    border: 1px dashed gold;
 }
 
 /* Styles each of the four links */
@@ -18,6 +103,7 @@ nav{
     font-size: 0.9em;
     
 }
+
 
 /* Styles for when each link is being clicked on */
 .nav-link:active{
@@ -41,7 +127,10 @@ nav{
 img:hover{
     filter:grayscale(100%);
 }
+img{
+    left: 25px;
 
+}
 
 
 /*Width of the Google Calendar Display */
@@ -83,8 +172,12 @@ section{
 #available-food-grid{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-}
 
+}
+#grid-section-header{
+    grid-row: 0 / 1;
+    grid-column: 1 / 6;
+}
 #grid-section-one{
     grid-row: 1 / 2;
     grid-column: 0 / 1;
@@ -106,8 +199,26 @@ section{
     grid-column: 4 / 5;
 }
 
-/*Include some media queries below.  I would create a dropdown
-that includes each of the individual links, rather than have them display
-as they are now.  Easier to manage. */
 
+@media screen and (max-width: 869px){
+    .nav-link{
+        display:none;
+    }
+    img{
+        width: 100%
+    }
+   
+}
+@media screen and (min-width: 870px){
+    #hamburger-lines{
+        display:none;
+    }
+    .nav-container .checkbox{
+        display:none;  
+    }
     
+    img{
+        width: 100%;
+    }
+   
+}
