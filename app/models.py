@@ -1,12 +1,14 @@
 import mysql.connector
 from flask import current_app
 
+
+#implement security stuff for the password and such
 def get_db_connection():
     return mysql.connector.connect(
-        host=current_app.config['localhost'],
-        user=current_app.config['huskypantry_dev'],
-        password=current_app.config['BavWxQRiHfGK7nm'],
-        database=current_app.config['huskypantry_inventory']
+        host='localhost',
+        user='huskypantry_dev',
+        password='BavWxQRiHfGK7nm',
+        database='huskypantry_inventory'
     )
 
 def add_user(name):
