@@ -10,7 +10,8 @@ def index():
     cursor = db.cursor()
     cursor.execute("CREATE DATABASE test_db;")
     cursor.execute("SHOW DATABASES;")
-    for db in cursor:
-        print(db)
+    out = "These are the dbs: "
+    for db in cursor.fetchall():
+        out += (db)
 
-    return render_template('index.html', title='Home')
+    return render_template('index.html', title='Home', output = out)
