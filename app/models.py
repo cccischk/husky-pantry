@@ -9,6 +9,9 @@ def get_db_connection():
         database=current_app.config['huskypantry_inventory']
     )
 
+
+
+
 def add_user(name):
     conn = get_db_connection()
     cursor = conn.cursor()
