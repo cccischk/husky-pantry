@@ -1,3 +1,4 @@
+
 *{
     font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 }
@@ -8,31 +9,28 @@ nav{
     background: black;
     border: 10px solid black;
     width: 100%;
-    margin: -10px 20px 0px -10px;
+    margin: -25px 20px 0px -20px;
     justify-content: space-between; 
     align-items: center; 
     padding: 10px;
+    position: absolute;
 }
-/*added*/
-#nav-container{
-    margin-left:auto;
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
+
 #hamburger-lines {
   display: block;
   height: 50px;
   width: 50px;
   position: absolute;
   top: 15px;
-  right: 25px;
+  left: 25px;
   z-index: 2;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   color: gold;
 }
+
+/*Styles how each of the hamburger lines that make up the hamburger should look like */
 #hamburger-lines .line {
   display: block;
   height: 5px;
@@ -41,35 +39,47 @@ nav{
   background: gold;
   color:gold
 }
+
+/*Styles how the whole hamburger menu should look when it's not been clicked on */
 .nav-container .checkbox {
   position: absolute;
   display: block;
   height: 50px;
   width: 50px;
-  top:15px;
-  right: 25px;
-  z-index: 5;
+  top: 15px;
+  left: 5px;
+  z-index: 5; 
   opacity: 0;
   cursor: pointer;
 }
 
+/*The 4 input[type=checkbox] styles change the three hamburger lines into the X when it's clicked on. */
 
+/* This styles the line that goes \ for the X */
 .nav-container input[type="checkbox"]:checked ~ #hamburger-lines .line1 {
   transform: rotate(45deg) translate(15px, 15px);
 }
 
+/*Hides the extra hamburger line behind one of the X lines. */
 .nav-container input[type="checkbox"]:checked ~ #hamburger-lines .line2 {
   transform: scaleY(0);
 }
 
+/* Code for when you click the hamburger menu and the X pops up.  This styles the line that goes like / */
 .nav-container input[type="checkbox"]:checked ~ #hamburger-lines .line3 {
-  transform: rotate(-45deg) translate(15px, -15px);
+  transform: rotate(-48deg) translate(18px, -15px);
 }
 
 .nav-container input[type="checkbox"]:checked ~ .logo{
   display: none;
 }
 
+/*This allows the actual dropdown to show when the hamburger is clicked. Do not remove. */
+.nav-container input[type="checkbox"]:checked ~ .vertical-nav{
+    left: 0px;
+}
+
+/* This is what displays when the Hamburger menu is clicked */
 .vertical-nav{
     display: flex;
     flex-direction: column;
@@ -77,23 +87,30 @@ nav{
     background-color: black;
     position: fixed;
     top: 91px;
-    right: -2000px;
+    left: -2000px;
     padding: 20px;
     border: 2px solid gold;
     gap: 15px;
+    text-align: center;
+    
 }
-.nav-container input[type="checkbox"]:checked ~ .vertical-nav{
-    right: 0px;
-}
+
+/* Each individual link within the Hamburger menu display */
 .vertical-nav a{
     color: gold;
-    text-decoration: none;
+    text-decoration: underline;
     font-size: 1.2em;
 }
+
+/* What displays when each hamburger link is clicked */
 .vertical-nav a:active{
     color: white;
     text-decoration: none;
-    border: 1px dashed gold;
+}
+  
+/* What displays when each hamburger link is hovered over */
+.vertical-nav a:hover{
+    text-decoration: none;
 }
 
 /* Styles each of the four links */
@@ -101,9 +118,7 @@ nav{
     color: gold;
     margin-right: 10px;
     font-size: 0.9em;
-    
 }
-
 
 /* Styles for when each link is being clicked on */
 .nav-link:active{
@@ -127,9 +142,11 @@ nav{
 img:hover{
     filter:grayscale(100%);
 }
-img{
-    left: 25px;
 
+/* Centers the image link in the nav bar */
+#image-link{
+  display: block;
+  margin: 0 auto;
 }
 
 
@@ -138,25 +155,20 @@ iframe{
     width: 100%;
 }
 
-
 h1{
     text-align: center;
+    padding-top: 90px;
 }
 
 h3{
 text-align: center;
-font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 }
-
-
-
 
 
 /*Each section is each box that is contained within the grid */
 section{
     border: 2px solid black;
 }
-
 
 #inventory-button{
     background-color: black;
@@ -166,6 +178,23 @@ section{
     padding: 10px 10px;
 }
 
+#inventory-button:hover{
+    background-color: black;
+    color: gold;
+    text-align: center;
+    font-size: 1.15em;
+    padding: 10px 10px;
+    border: 2px solid gold;
+}
+
+#inventory-button:active{
+    background-color: gold;
+    color: black;
+    text-align: center;
+    font-size: 1.15em;
+    padding: 10px 10px;
+    border: 2px solid black;
+}
 
 
 /* This is all the CSS for the grid showing the items available in general */
@@ -174,52 +203,15 @@ section{
     grid-template-columns: repeat(5, 1fr);
 
 }
-#grid-section-header{
-    grid-row: 0 / 1;
-    grid-column: 1 / 6;
-}
-#grid-section-one{
-    grid-row: 1 / 2;
-    grid-column: 0 / 1;
-}
-#grid-section-two{
-    grid-row: 1 / 2;
-    grid-column: 1 / 2;
-}
-#grid-section-three{
-    grid-row: 1 / 2;
-    grid-column: 2 / 3;
-}
-#grid-section-four{
-    grid-row: 1 / 2;
-    grid-column: 3 / 4;
-}
-#grid-section-five{
-    grid-row: 1 / 2;
-    grid-column: 4 / 5;
-}
 
 
+/*Changes screen display between 400 and 1,023 pixels to change grid behavior */
 
-@media screen and (max-width: 869px){
-    .nav-link{
-        display:none;
-    }
-    img{
-        width: 100%
+  @media screen and (min-width: 400px) and (max-width: 1023px) {
+    #available-food-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
     }
    
-}
-@media screen and (min-width: 870px){
-    #hamburger-lines{
-        display:none;
-    }
-    .nav-container .checkbox{
-        display:none;  
-    }
     
-    img{
-        width: 100%;
-    }
-   
-}
+  }

@@ -1,69 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-
-Skip to content
-Using Michigan Technological University Mail with screen readers
-
-Conversations
- 
-Program Policies
-Powered by Google
-Last account activity: 1 minute ago
-Details
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <link rel="stylesheet" href="style-Copy.css">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="Gavin Spaulding, Cam Cischke, Gaby Bonfil, Zack Sickmann, and Andrew Crocker.">
-        <meta name="description" content="This is a website intended for students to be able to look at the stock of HuskyPantry.">
-        <meta name="keywords" content="HuskyPantry inventory, Husky Pantry Inventory">
-    </head>
-    <header>
-        <nav>
-            <!-- Left: Michigan Tech Logo; Keep Left Alligned -->
-            <a href="https://www.mtu.edu" target="_blank">
-                <img alt="Michigan Tech Logo" src="https://www.mtu.edu/mtu_resources/images/logos/michigan-tech-logo-full-yellow.svg" width="255" height="50">
-            </a>
-
-            <!-- Move Links to the Right of the Screen -->
-            <div id="nav-container" style="text-align: right;">
-                <a class="nav-link" href="https://www.mtu.edu/huskyfan/faqs/" target="_blank">FAQs</a>
-                <a class="nav-link" href="https://www.mtu.edu/huskyfan/resources/campus/" target="_blank">Additional Campus Resources</a>
-                <a class="nav-link" href="https://www.mtu.edu/huskyfan/resources/community/" target="_blank">Additional Community Resources</a>
-                <a class="nav-link" href="https://www.mtu.edu/huskyfan/donate/" target="_blank">How to Donate</a>
-                
-            </div>
-
-           
-            <div class="nav-container">
-                <input type="checkbox" class="checkbox" id="menu-toggle" />
-                <div id="hamburger-lines">
-                    <span class="line line1"></span>
-                    <span class="line line2"></span>
-                    <span class="line line3"></span>
-                </div>
-                <div class="vertical-nav" aria-hidden="true">
-                    <a href="https://www.mtu.edu/huskyfan/faqs/" target="_blank">FAQs</a>
-                    <a href="https://www.mtu.edu/huskyfan/resources/campus/" target="_blank">Additional Campus Resources</a>
-                    <a href="https://www.mtu.edu/huskyfan/resources/community/" target="_blank">Additional Community Resources</a>
-                    <a href="https://www.mtu.edu/huskyfan/donate/" target="_blank">How to Donate</a>
-                </div>
-
-                
-            </div>
-            
-        </nav>
-    </header>
-    <body>
+<body>
         <h1>Welcome to the HuskyPantry Inventory Tracker!</h1>
         <h2>Location</h2>
         <a href="https://map.mtu.edu/?id=1308#!m/965017?s/" target="_blank">Check out our location on the campus map!</a> 
         <p>The HuskyFAN Pantry is located on the first floor of Fisher Hall. It is behind the glass wall, across the hall from Fisher 135.  The HuskyPantry is free for any Michigan Tech student or member of the community.  It does <strong>not</strong> require a sign up, fee, or payment of any kind. Some of the basic items you'll find at the Pantry are listed below:</p>
-        <div class="available-food-grid" >
+        <div id="available-food-grid">
+            
             <section>
                 <h3>Dry Goods</h3>
                 <ul>
@@ -74,7 +18,7 @@ Details
                 </ul>
             </section>
 
-            <section>
+            <section >
                 <h3>Meal Bases</h3>
                 <ul>
                     <li>Mac and Cheese</li>
@@ -119,13 +63,12 @@ Details
         <br>
             <iframe style="border-width: 0;" src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;ctz=America%2FDetroit&amp;showPrint=0&amp;mode=WEEK&amp;showTitle=0&amp;showCalendars=0&amp;src=aHVza3lmYW5AbXR1LmVkdQ&amp;color=%234285f4"  height="500" frameborder="0" scrolling="no"></iframe>
             <p>If you want to see the HuskyPantry's available inventory, click the available inventory button below!  *This is a Work in Progress*</p>
-            <a href="inventory.html" target="_blank" id="inventory-button">Available Inventory</a>
+            <button type="button" id="inventory-button">Available Inventory</button>
     </body>
     
     <footer>
         <p>This page is currently under construction.  This webpage is part of the CS3141 Team Software Project, created by 5 students in the Fall 2025 class.</p>
     </footer>
-</html>
             
 {% endblock %}
 
