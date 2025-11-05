@@ -1,9 +1,9 @@
-import imp
 import os
 import sys
 
 
+# Add your project directory to the sys.path
 sys.path.insert(0, os.path.dirname(__file__))
 
-wsgi = imp.load_source('wsgi', 'app/routes.py')
-application = wsgi.app
+# Import your Flask app
+from app.routes import app as application
