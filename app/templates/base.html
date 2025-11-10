@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <!--None of this is seen, this is all setup for how the page appears on different browsers and in search engines, etc.-->
         <link rel="stylesheet" href="style.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Gavin Spaulding, Cam Cischke, Gaby Bonfil, Zack Sickmann, and Andrew Crocker.">
         <meta name="description" content="This is a website intended for students to be able to look at the stock of HuskyPantry.">
         <meta name="keywords" content="HuskyPantry inventory, Husky Pantry Inventory">
+        <title>HuskyPantry Website</title>
     </head>
+    <!--This is everything above the Weclome message-->
     <header>
         <nav>
-            <a id="image-link"href="https://www.mtu.edu" target="_blank">
-                <img alt="Michigan Tech Logo" src="https://www.mtu.edu/mtu_resources/images/logos/michigan-tech-logo-full-yellow.svg" width="255" height="50">
-            </a>
-
-            <div class="nav-container">
-                <input type="checkbox" class="checkbox" id="menu-toggle" />
-                <div id="hamburger-lines">
-                    <span class="line line1"></span>
-                    <span class="line line2"></span>
-                    <span class="line line3"></span>
-                </div>
-                <div class="vertical-nav">
+            <div class="dropdown">
+                    <button class="dropbtn">Links</button>
+                <div class="dropdown-content">
                     <a href="https://www.mtu.edu/huskyfan/faqs/" target="_blank">FAQs</a>
                     <a href="https://www.mtu.edu/huskyfan/resources/campus/" target="_blank">Additional Campus Resources</a>
                     <a href="https://www.mtu.edu/huskyfan/resources/community/" target="_blank">Additional Community Resources</a>
                     <a href="https://www.mtu.edu/huskyfan/donate/" target="_blank">How to Donate</a>
                 </div>
+                </div>
+            <a id="image-link"href="https://www.mtu.edu" target="_blank">
+                <img alt="Michigan Tech Logo, used as a link to Michigan Technological University's home page." src="https://www.mtu.edu/mtu_resources/images/logos/michigan-tech-logo-full-yellow.svg" width="255" height="50">
+            </a>
+            <div class="nav-link-flexbox">
+                <a class="nav-link" href="https://www.mtu.edu/huskyfan/faqs/" target="_blank">FAQs</a>
+                <a class="nav-link" href="https://www.mtu.edu/huskyfan/resources/campus/" target="_blank">Additional Campus Resources</a>
+                <a class="nav-link" href="https://www.mtu.edu/huskyfan/resources/community/" target="_blank">Additional Community Resources</a>
+                <a class="nav-link" href="https://www.mtu.edu/huskyfan/donate/" target="_blank">How to Donate</a>
             </div>
         </nav>
     </header>
