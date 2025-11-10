@@ -3,139 +3,47 @@
     font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 }
 
+
 /*This is the space for the entire navigation bar */
 nav{
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%;
     background: black;
     border: 10px solid black;
     width: 100%;
-    margin: -25px 20px 0px -20px;
-    justify-content: space-between; 
-    align-items: center; 
+    margin: 0px 20px 0px -20px;
     padding: 10px;
-    position: absolute;
 }
 
-#hamburger-lines {
-  display: block;
-  height: 50px;
-  width: 50px;
-  position: absolute;
-  top: 15px;
-  left: 25px;
-  z-index: 2;
+.nav-link-flexbox{
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: gold;
-}
-
-/*Styles how each of the hamburger lines that make up the hamburger should look like */
-#hamburger-lines .line {
-  display: block;
-  height: 5px;
-  width: 100%;
-  border-radius: 10px;
-  background: gold;
-  color:gold
-}
-
-/*Styles how the whole hamburger menu should look when it's not been clicked on */
-.nav-container .checkbox {
-  position: absolute;
-  display: block;
-  height: 50px;
-  width: 50px;
-  top: 15px;
-  left: 5px;
-  z-index: 5; 
-  opacity: 0;
-  cursor: pointer;
-}
-
-/*The 4 input[type=checkbox] styles change the three hamburger lines into the X when it's clicked on. */
-
-/* This styles the line that goes \ for the X */
-.nav-container input[type="checkbox"]:checked ~ #hamburger-lines .line1 {
-  transform: rotate(45deg) translate(15px, 15px);
-}
-
-/*Hides the extra hamburger line behind one of the X lines. */
-.nav-container input[type="checkbox"]:checked ~ #hamburger-lines .line2 {
-  transform: scaleY(0);
-}
-
-/* Code for when you click the hamburger menu and the X pops up.  This styles the line that goes like / */
-.nav-container input[type="checkbox"]:checked ~ #hamburger-lines .line3 {
-  transform: rotate(-48deg) translate(18px, -15px);
-}
-
-.nav-container input[type="checkbox"]:checked ~ .logo{
-  display: none;
-}
-
-/*This allows the actual dropdown to show when the hamburger is clicked. Do not remove. */
-.nav-container input[type="checkbox"]:checked ~ .vertical-nav{
-    left: 0px;
-}
-
-/* This is what displays when the Hamburger menu is clicked */
-.vertical-nav{
-    display: flex;
-    flex-direction: column;
-    width: 200px;
-    background-color: black;
-    position: fixed;
-    top: 91px;
-    left: -2000px;
-    padding: 20px;
-    border: 2px solid gold;
-    gap: 15px;
-    text-align: center;
-    
-}
-
-/* Each individual link within the Hamburger menu display */
-.vertical-nav a{
-    color: gold;
-    text-decoration: underline;
-    font-size: 1.2em;
-}
-
-/* What displays when each hamburger link is clicked */
-.vertical-nav a:active{
-    color: white;
-    text-decoration: none;
-}
-  
-/* What displays when each hamburger link is hovered over */
-.vertical-nav a:hover{
-    text-decoration: none;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px; /* 5px space between links */
 }
 
 /* Styles each of the four links */
 .nav-link {
     color: gold;
-    margin-right: 10px;
-    font-size: 0.9em;
+    margin-left: auto;
 }
 
 /* Styles for when each link is being clicked on */
 .nav-link:active{
     color: white;
     text-decoration: none;
-    border: 1px dashed gold;
 }
 
 /* Removes the underline when each link is hovered on */
 .nav-link:hover{
     text-decoration: none;
 }
-
-/*  Container for each individual flexbox item.  nav is the parent with display: flex*/
-#nav-container{
-    margin-top: 15px;
-}
+/*End space for Nav Bar */
 
 
 /* Grays out the Michigan Tech image in the navbar while it's hovered on */
@@ -143,23 +51,26 @@ img:hover{
     filter:grayscale(100%);
 }
 
-/* Centers the image link in the nav bar */
+/*Sets the image to display on the left of the flexbox it's contained in. */
 #image-link{
-  display: block;
-  margin: 0 auto;
+  display: flex;
+  margin-right: auto;
+  align-items: start;
 }
 
-
-/*Width of the Google Calendar Display */
+/*Width of the Google Calendar Display.  Also adds some spacing between them. */
 iframe{
     width: 100%;
+    padding-top: 40px;
 }
 
+/*Welcome message styling */
 h1{
     text-align: center;
     padding-top: 90px;
 }
 
+/*Location header */
 h3{
 text-align: center;
 }
@@ -170,48 +81,131 @@ section{
     border: 2px solid black;
 }
 
-#inventory-button{
-    background-color: black;
-    color: gold;
-    text-align: center;
-    font-size: 1.15em;
-    padding: 10px 10px;
-}
 
-#inventory-button:hover{
-    background-color: black;
-    color: gold;
-    text-align: center;
-    font-size: 1.15em;
-    padding: 10px 10px;
-    border: 2px solid gold;
-}
-
-#inventory-button:active{
-    background-color: gold;
-    color: black;
-    text-align: center;
-    font-size: 1.15em;
-    padding: 10px 10px;
-    border: 2px solid black;
-}
-
-
-/* This is all the CSS for the grid showing the items available in general */
+/* This is the CSS setup for the grid showing the items available in general */
 #available-food-grid{
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-
+    gap: 10px;
 }
 
-
-/*Changes screen display between 400 and 1,023 pixels to change grid behavior */
+/*Changes screen display between 400 and 1,023 pixels to change grid and nav bar behavior */
 
   @media screen and (min-width: 400px) and (max-width: 1023px) {
+    /*Sets the image to display in the middle of the nav bar.  It's no longer contained in the flexbox. */
+    #image-link{
+      display:block;
+      margin: 0 auto;
+    }
+
+    /*Sets the grid to have 2 visible columns */
     #available-food-grid {
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
     }
-   
+    /*Hides all the regular links and allocates no space for them */
+    .nav-link{
+      display: none;
+    }
+  }
     
+  /* The dropdown button that says links.  We hide this when the screen is wide enough to fit all the links. */
+  .dropbtn {
+      display: none;
+      font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+      background-color: black;
+      color: gold;
+      padding: 16px;
+      font-size: 16px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #dddddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: black;
+}
+
+/*When the screen is smaller than 1023 pixels, we hide the links that displayed before and switch to the dropdown display */
+@media screen and (max-width: 1023px){
+  .dropbtn {
+      display: block;
+      font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+      background-color: black;
+      color: gold;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+/* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+/* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+/* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #dddddd;
+  }
+
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {
+    background-color: black;
+  }
   }
