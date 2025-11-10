@@ -85,8 +85,12 @@ section{
 /* This is the CSS setup for the grid showing the items available in general */
 #available-food-grid{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 10px;
+}
+
+#hygiene-p{
+  text-align: center;
 }
 
 /*Changes screen display between 400 and 1,023 pixels to change grid and nav bar behavior */
